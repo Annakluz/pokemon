@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" type="image/x-icon" href="pokemon.ico">
     <link rel="stylesheet" href="pokemon.css">
+    <script src="pokemon.js"></script> 
     <title>POKEDEX</title>
 </head>
 <body>
@@ -14,15 +15,18 @@
         <input type="text" id="nombrePokemon" placeholder="¿Quien es tu Pokemon?">
         <input type="text" id="colorPokemon" placeholder="¿Cual es el color de tu pokemon?">
         <input type="text" id="puntosAtaque" placeholder="El poder de ataque de pokemon">
-        <button type="button" id="botonCrearPokemon" onclick="crearPokemon()">Atrapalo!</button>
+        <button type="button" id="crearPokemon" onclick="crearPokemon()">Atrapalo!</button>
     </section>
-    <section>
-        <ul></ul>
-    </section>
+         <select id="listaPokemones">
+                <option id="elemento" value="value2"></option>
+         </select>
+         <select id="listaContrincante">
+         <option ></option>
     <section>
         <button type="button" id="pelear" onclick="pelear()">¡¡Batalla Pokemon!!</button>
     </section>
     
-    <script src="pokemon.js"></script>   
+     <script src="pokemon.js"></script> 
 </body>
+
 </html>

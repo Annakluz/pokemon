@@ -11,37 +11,41 @@ function Pokemon(nombre, color, puntosAtaque){
     }
 }
 
-var pokemons[];
+var pokemons=[];
 
 function crearPokemon() {
     var nombrePokemon = document.getElementById("nombrePokemon");
     var colorPokemon = document.getElementById("colorPokemon");
     var puntosAtaque = document.getElementById("puntosAtaque");
-    var pokemon = new Pokemon(nombrePokemon.value,
-                              colorPokemon.value,
-                              parseInt(puntosAtaque.value,))
-    pokemons.push(pokemon)
-    mostrarPokemons();
+    
+    
+    var pokemon = new Pokemon(nombrePokemon.value, 
+                              colorPokemon.value, 
+                              parseInt(puntosAtaque.value));
+    pokemons.push(pokemon);                         
+    console.log(pokemons);
+    mostrarPokemon();
+    nombrePokemon.value = " ";
+    colorPokemon.value = " ";
+    puntosAtaque.value = " ";
 }
-console.log(pokemon);
 
-function mostrarPokemons(){
-    var listaPokemons = document.getElementById("listaPokemons");
-    var lista = document.createElement("ul");
+function mostrarPokemon() {
+    var listaPokemones = document.getElementById("listaPokemones");
+    var listaContrincantes = document.getElementById("listaContrincante");
+    var opciones = document.createElement("select");
+    var opcionesContrincantes = document.createElement("select");
+    var elemento = document.createElement("option");
+    var elementoContrincante = document.createElement("option");
+   pokemons.forEach(function(pokemon) {
+    elemento.innerText = pokemon.nombre + " " + pokemon.color + " " + pokemon.puntosAtaque;
+    elementoContrincante.innerHTML = pokemon.nombre + " " + pokemon.color + " " + pokemon.puntosAtaque;
+    listaPokemones.appendChild(elemento);
+    listaContrincantes.appendChild(elementoContrincante);
+    });
     
-    pokemons.forEach(function(pokemon){
-        var elemento = document.createElement("li");
-        
-        elemento.innerHTML=pokemon.nombre + pokemon.color + pokemon.puntosAtaque;
-        lista.appendChild(elemento);
-    })
-    listaPokemons.appendChild(lista);
- /*   var strFinal="";
     
-    pokemons.forEach(function(pokemon){
-                     strFinal +=pokemon.nombre
-                     strFinal +=pokemon.color
-                     strFinal +=pokemon.puntosAtaque
-                     })
-    listaPokemons.innerHTML=strFinal;*/
 }
+
+
+
