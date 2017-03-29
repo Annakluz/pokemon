@@ -37,7 +37,7 @@ function mostrarPokemon() {
     var opcionesContrincantes = document.createElement("select");
     var elemento = document.createElement("option");
     var elementoContrincante = document.createElement("option");
-   pokemons.forEach(function(pokemon) {
+    pokemons.forEach(function(pokemon) {
     elemento.innerText = pokemon.nombre + " " + pokemon.color + " " + pokemon.puntosAtaque;
     elementoContrincante.innerHTML = pokemon.nombre + " " + pokemon.color + " " + pokemon.puntosAtaque;
     listaPokemones.appendChild(elemento);
@@ -46,6 +46,8 @@ function mostrarPokemon() {
     
     
 }
+
+
 
 
 
